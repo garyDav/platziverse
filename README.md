@@ -1,5 +1,7 @@
 # PROYECTO NODEJS
-Pasos para la realización del proyecto `Platziverse`
+Pasos para la realización del proyecto `Platziverse`.
+
+Para ver el curso completo ingrese a [Platzi/node](https://platzi.com/nodejs/)
 ___
 ### Peparando el entorno de desarrollo.
 
