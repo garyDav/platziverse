@@ -10,8 +10,8 @@ ___
 Sólo tenemos que utilizar el gestor de paquetes `apt`. En primer lugar debemos actualizar nuestro índice de paquetes local, y luego instalarla desde los repositorios:
 
 ```shell
-  user@pc:~$ sudo apt-get update
-  user@pc:~$ sudo apt-get install nodejs
+user@pc:~$ sudo apt-get update
+user@pc:~$ sudo apt-get install nodejs
 ```
 
 También puede instalar `npm`, que es el gestor de paquetes Node.js. Puede hacer esto escribiendo:
@@ -89,16 +89,50 @@ user@pc:~$ sudo apt-get install postgresql postgresql-contrib libpq-dev
 
 - ***Redis***
 
-Sólo tenemos que utilizar el gestor de paquetes `apt`. En primer lugar debemos actualizar nuestro índice de paquetes local, y luego instalarla desde los repositorios:
+Debemos utilizar el gestor de paquetes `apt` para instalar paquetes previos que nos ayudará a que varios paquetes que dependan de librerías de tipo `C / C++` se ejecuten con normalidad. Primeramente debemos actualizar nuestro índice de paquetes local, y luego instalarla desde los repositorios:
 
 ```shell
 user@pc:~$ sudo apt-get update
 user@pc:~$ sudo apt-get install build-essential tcl
 ```
 
-Dado que no necesitamos guardar el código fuente, podemos hacer uso del directorio /tmp: `cd /tmp`
+Dado que no necesitamos guardar el código fuente, podemos hacer uso del directorio `/tmp`:
 
-Ahora descargamos la última versión estable de Redis: `curl -O http://download.redis.io/redis-stable.tar.gz`, lo descomprimimos `tar xzvf redis-stable.tar.gz`, e ingresamos al directorio redis-stable que se extrajo: `cd redis-stable`, compilamos los binarios mediante el comando make: `make`, e instalamos los binarios: `sudo make install` y listo :)
+```shell
+user@pc:~$ cd /tmp
+```
+
+Ahora descargamos la última versión estable de Redis:
+
+```shell
+user@pc:~$ curl -O http://download.redis.io/redis-stable.tar.gz
+```
+
+Lo descomprimimos con el comando `tar`:
+
+```shell
+user@pc:~$ tar xzvf redis-stable.tar.gz
+```
+
+Ingresamos al directorio `redis-stable` que se extrajo:
+
+```shell
+user@pc:~$ cd redis-stable
+```
+
+Compilamos los binarios mediante el comando `make`:
+
+```shell
+user@pc:~$ make
+```
+
+Instalamos los binarios:
+
+```shell
+user@pc:~$ sudo make install
+```
+
+*Listo :)*
 
 - ***Ansible***
 
@@ -108,8 +142,7 @@ La mejor forma de obtener Ansible para Ubuntu es agregar el PPA (archivo de paqu
 user@pc:~$ sudo apt-add-repository ppa:ansible/ansible
 ```
 
-Presione `ENTER` para aceptar la adición de PPA.  
-A continuación, debemos actualizar el índice del paquete de nuestro sistema para que esté al tanto de los paquetes disponibles en el PPA. Luego, podemos instalar `ansible`:
+Presione `ENTER` para aceptar la adición de PPA. A continuación, debemos actualizar el índice del paquete de nuestro sistema para que esté al tanto de los paquetes disponibles en el PPA. Luego, podemos instalar `ansible`:
 
 ```shell
 user@pc:~$ sudo apt-get update
@@ -129,7 +162,7 @@ Para más información de la instalación, haz click en la siguiente [Página](h
 Es una herramienta gratuita de línea de comandos, disponible para *Windows*, *MacOS X* y *GNU/Linux*, que permite generar entornos de desarrollo reproducibles y compartibles de forma muy sencilla. Para ello, `Vagrant` crea y configura máquinas virtuales a partir de simples ficheros de configuración.
 
 Para descargar `Vagrant` debe visitar la [Página oficial](https://www.vagrantup.com/downloads.html).  
-En el caso de *Ubuntu* descargamos el archivo de ***Debian 64-bit***, descarga una archivo `.deb`, para instalarlo:
+En el caso de *Ubuntu* descargamos el archivo de ***Debian 64-bit***, descarga un archivo `.deb`, para instalarlo:
 
 ```shell
 user@pc:~$ cd Descargas
